@@ -13,15 +13,7 @@ public class SmartHomeRemoteControl {
         slots.put(slot, command);
     }
 
-    public void pressButton(String slot) {
-        Command command = slots.get(slot);
-        if (command != null) {
-            command.execute();
-            lastCommand = command;
-        } else {
-            System.out.println("No command assigned to " + slot);
-        }
-    }
+    
 
     public void undoButton() {
         if (lastCommand != null) {
