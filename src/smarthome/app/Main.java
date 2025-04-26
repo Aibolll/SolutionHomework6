@@ -35,19 +35,7 @@ public class Main {
                 break;
             }
 
-            if (input.equalsIgnoreCase("set_temp")) {
-                System.out.print("Enter temperature (°C): ");
-                try {
-                    int temp = Integer.parseInt(scanner.nextLine().trim());
-                    Command setTemp = new SetThermostatCommand(thermostat, temp);
-                    remote.assignCommand("set_temp", setTemp); // update with new temp
-                    remote.pressButton("set_temp");
-                } catch (NumberFormatException e) {
-                    System.out.println("Invalid temperature input. Please enter a number.");
-                }
-            } else {
-                remote.pressButton(input);
-            }
+            
         }
 
         scanner.close();
